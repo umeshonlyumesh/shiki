@@ -227,6 +227,15 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+
+      <!-- Button to open JSON modal -->
+      <button
+        class="json-button"
+        (click)="openJsonModal()"
+        style="margin-top: 20px; padding: 10px 20px; background-color: #1976d2; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;"
+      >
+        Show JSON with Shiki
+      </button>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -323,6 +332,9 @@
     </div>
   </div>
 </main>
+
+<!-- JSON Modal Component -->
+<app-json-modal [jsonData]="sampleJsonData" [isOpen]="isModalOpen" (closeEvent)="onModalClose()"></app-json-modal>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
